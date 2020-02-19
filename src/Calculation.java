@@ -1,35 +1,35 @@
 public class Calculation {
 
     final double ratePercent = (12.5/100);
-    private double surcharge, finalPrice, rawTax, manufacturedTax, importedTax;
+    private double finalPrice, rawTax, manufacturedTax, importedTax;
 
-    Test2 test = new Test2();
 
-    public double calculateTaxLiability() {
-        if (test.getType().toLowerCase().equals("Raw")) {
+    public double calculateTaxLiability(Test2 test) {
+        if (test.getType().toLowerCase().equals("raw")) {
             rawTax = (ratePercent * (test.getPrice() * test.getQuantity()));
             finalPrice = test.getPrice() + rawTax;
-        } else if (test.getType().toLowerCase().equals("Manufactured")) {
+        } else if (test.getType().toLowerCase().equals("manufactured")) {
             manufacturedTax = ((ratePercent * (test.getPrice() * test.getQuantity()))) +
                     (2 * (test.getPrice() + (ratePercent * (test.getPrice() * test.getQuantity())))/100);
             finalPrice = test.getPrice() + manufacturedTax;
-        } else if (test.getType().toLowerCase().equals("Imported")) {
-            importedTax = ((10 * test.getPrice()/100)+ surchargeCalculationOnImportedType());
-            finalPrice = test.getPrice() + importedTax;
+        } else if (test.getType().toLowerCase().equals("imported")) {
+            double tax = ((10 * test.getPrice()/100));
+            finalPrice = test.getPrice() + tax;
+            double surcharge = surchargeCalculationOnImportedType(finalPrice);
+            finalPrice = finalPrice + surcharge;
         }
-        System.out.println(finalPrice);
         return finalPrice;
 
     }
-    private double surchargeCalculationOnImportedType() {
-        if (test.getType().toLowerCase().equals("Imported") && finalPrice <= 100) {
+    private double surchargeCalculationOnImportedType(double finalPrice) {
+        double surcharge = 0.0;
+        if (finalPrice <= 100) {
             surcharge = 5;
-        } else if (test.getType().toLowerCase().equals("Imported") && (finalPrice > 100 && finalPrice <= 200)) {
+        } else if (finalPrice > 100 && finalPrice <= 200) {
             surcharge = 10;
-        } else if (test.getType().toLowerCase().equals("Imported") && finalPrice > 200) {
+        } else if (finalPrice > 200) {
             surcharge = ((5 * finalPrice) / 100);
         }
-        System.out.println(surcharge);
         return surcharge;
     }
 
