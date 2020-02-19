@@ -21,13 +21,13 @@ public class Test1 {
     public boolean UserInputForItem() {
         while (yesOrNo = true) {
             Scanner scanner = new Scanner(System.in);
-            scanner.next();
+            name = scanner.next();
             System.out.println("-name<" + name + ">");
-            scanner.next();
+            price = scanner.nextInt();
             System.out.println("-price<" + price + ">");
-            scanner.next();
+            quantity = scanner.nextInt();
             System.out.println("-quantity<" + quantity + ">");
-            scanner.next();
+            type = scanner.next();
             System.out.println("-type<" + type + ">");
             System.out.println("Do you want to enter details of any other item (y/n)");
             yesOrNo = scanner.nextBoolean();
@@ -61,5 +61,11 @@ public class Test1 {
             surcharge = ((5 * finalPrice) / 100);
         }
         return surcharge;
+    }
+    public void printOnConsole(){
+        System.out.println(name);
+        System.out.println(price);
+        System.out.println(finalPrice);
+        //System.out.println(Tax);
     }
 }
