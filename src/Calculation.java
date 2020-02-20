@@ -4,17 +4,17 @@ public class Calculation {
     private double finalPrice, rawTax, manufacturedTax, importedTax;
 
 
-    public double calculateTaxLiability(Test2 test) {
-        if (test.getType().toLowerCase().equals("raw")) {
-            rawTax = (ratePercent * (test.getPrice() * test.getQuantity()));
-            finalPrice = test.getPrice() + rawTax;
-        } else if (test.getType().toLowerCase().equals("manufactured")) {
-            manufacturedTax = ((ratePercent * (test.getPrice() * test.getQuantity()))) +
-                    (2 * (test.getPrice() + (ratePercent * (test.getPrice() * test.getQuantity())))/100);
-            finalPrice = test.getPrice() + manufacturedTax;
-        } else if (test.getType().toLowerCase().equals("imported")) {
-            double tax = ((10 * test.getPrice()/100));
-            finalPrice = test.getPrice() + tax;
+    public double calculateTaxLiability(Item item) {
+        if (item.getType().toLowerCase().equals("raw")) {
+            rawTax = (ratePercent * (item.getPrice() * item.getQuantity()));
+            finalPrice = item.getPrice() + rawTax;
+        } else if (item.getType().toLowerCase().equals("manufactured")) {
+            manufacturedTax = ((ratePercent * (item.getPrice() * item.getQuantity()))) +
+                    (2 * (item.getPrice() + (ratePercent * (item.getPrice() * item.getQuantity())))/100);
+            finalPrice = item.getPrice() + manufacturedTax;
+        } else if (item.getType().toLowerCase().equals("imported")) {
+            double tax = ((10 * item.getPrice()/100));
+            finalPrice = item.getPrice() + tax;
             double surcharge = surchargeCalculationOnImportedType(finalPrice);
             finalPrice = finalPrice + surcharge;
         }
@@ -32,19 +32,5 @@ public class Calculation {
         }
         return surcharge;
     }
-
-    public double getFinalPrice() {
-        return finalPrice;
-    }
-    public double getRawTax() {
-        return rawTax;
-    }
-    public double getManufacturedTax() {
-        return manufacturedTax;
-    }
-    public double getImportedTax() {
-        return importedTax;
-    }
-
 
 }
