@@ -31,6 +31,7 @@ public class Test1 {
             System.out.println("-type<" + type + ">");
             System.out.println("Do you want to enter details of any other item (y/n)");
             yesOrNo = scanner.nextBoolean();
+            scanner.close();
         }
         return yesOrNo;
     }
