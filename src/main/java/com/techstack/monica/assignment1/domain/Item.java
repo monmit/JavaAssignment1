@@ -1,3 +1,5 @@
+package main.java.com.techstack.monica.assignment1.domain;
+
 public abstract class Item {
     private int price;
     private int quantity;

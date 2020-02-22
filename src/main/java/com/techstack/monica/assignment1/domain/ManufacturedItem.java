@@ -1,3 +1,5 @@
+package main.java.com.techstack.monica.assignment1.domain;
+
 public class ManufacturedItem extends Item {
 
     public static final String MANUFACTURED = "manufactured";

@@ -1,18 +1,20 @@
-import java.util.Scanner;
+package main.java.com.techstack.monica.assignment1.service;
+
+import main.java.com.techstack.monica.assignment1.domain.ImportedItem;
+import main.java.com.techstack.monica.assignment1.domain.Item;
+import main.java.com.techstack.monica.assignment1.domain.ManufacturedItem;
+import main.java.com.techstack.monica.assignment1.domain.RawItem;
+
 import java.util.StringTokenizer;
 
-public class ConsoleHandler {
+public class Parser {
 
     public static final String PRICE = "price";
     public static final String QUANTITY = "quantity";
     public static final String NAME = "name";
     public static final String TYPE = "type";
 
-    public Item userInputForItem() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the details below for item name, price, quantity and type " +
-                            "(type =raw, manufactured or imported.");
-        String input = scanner.next();
+    public Item parseItem(String input) {
         StringTokenizer tokenizer = new StringTokenizer(input, "-");
         String type = null;
         String name = null;
@@ -46,12 +48,5 @@ public class ConsoleHandler {
             item = new ManufacturedItem(name, price, quantity);
         }
         return item;
-
-}
-
-
-    public void printOnConsole(Item item){
-        System.out.println(item.toString());
     }
-
 }

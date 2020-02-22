@@ -1,3 +1,5 @@
+package main.java.com.techstack.monica.assignment1.domain;
+
 public class RawItem extends Item {
 
     public static final String RAW = "raw";
