@@ -1,5 +1,6 @@
 public class Item {
-    private int price, quantity;
+    private int price;
+    private int quantity;
     private String name;
     private String type;
 
