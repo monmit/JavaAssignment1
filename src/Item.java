@@ -1,39 +1,54 @@
-public class Item {
+public abstract class Item {
     private int price;
     private int quantity;
+    private double tax;
     private String name;
     private String type;
 
-    public String getName() {
-        return name;
+    public Item(int price, int quantity, String name, String type) {
+        this.price = price;
+        this.quantity = quantity;
+        this.name = name;
+        this.type = type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public double getTax() {
+        return tax;
     }
 
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public double getFinalPrice() {
+        return price + tax;
+    }
+
+    public abstract void calculateTaxLiability();
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", getFinalPrice=" + getFinalPrice() +
+                ", tax=" + tax +
+                '}';
+    }
 }
