@@ -1,11 +1,11 @@
-package main.java.com.techstack.monica.assignment1;
+package com.techstack.monica.assignment1;
 
-import main.java.com.techstack.monica.assignment1.service.FileInputOutputServiceImpl;
-import main.java.com.techstack.monica.assignment1.service.ItemService;
-import main.java.com.techstack.monica.assignment1.service.Parser;
+import com.techstack.monica.assignment1.service.ConsoleInputOutputServiceImpl;
+import com.techstack.monica.assignment1.service.ItemService;
+import com.techstack.monica.assignment1.service.Parser;
 
 public class Main {
     public static void main(String[] args) {
-        new ItemService(new FileInputOutputServiceImpl(), new Parser()).run();
+        new ItemService(new ConsoleInputOutputServiceImpl(), new Parser()).run();
     }
 }

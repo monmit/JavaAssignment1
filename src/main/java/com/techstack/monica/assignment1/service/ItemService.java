@@ -1,6 +1,6 @@
-package main.java.com.techstack.monica.assignment1.service;
+package com.techstack.monica.assignment1.service;
 
-import main.java.com.techstack.monica.assignment1.domain.Item;
+import com.techstack.monica.assignment1.domain.Item;
 
 public class ItemService {
 

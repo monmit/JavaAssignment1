@@ -1,4 +1,4 @@
-package main.java.com.techstack.monica.assignment1.domain;
+package com.techstack.monica.assignment1.domain;
 
 public class RawItem extends Item {
 

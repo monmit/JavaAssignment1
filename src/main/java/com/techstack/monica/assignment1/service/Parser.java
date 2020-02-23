@@ -1,9 +1,9 @@
-package main.java.com.techstack.monica.assignment1.service;
+package com.techstack.monica.assignment1.service;
 
-import main.java.com.techstack.monica.assignment1.domain.ImportedItem;
-import main.java.com.techstack.monica.assignment1.domain.Item;
-import main.java.com.techstack.monica.assignment1.domain.ManufacturedItem;
-import main.java.com.techstack.monica.assignment1.domain.RawItem;
+import com.techstack.monica.assignment1.domain.ImportedItem;
+import com.techstack.monica.assignment1.domain.Item;
+import com.techstack.monica.assignment1.domain.ManufacturedItem;
+import com.techstack.monica.assignment1.domain.RawItem;
 
 import java.util.StringTokenizer;
 
